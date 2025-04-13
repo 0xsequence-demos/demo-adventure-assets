@@ -2,6 +2,8 @@
 
 Assets meant to be hosted and used by projects, tokens and metadata.
 
+Comes with a built-in viewer!
+
 ## Quickstart
 
 Copy `.env.example` to `.env` and fill with your project information. To test things out, you can use the pre-provided keys in the `.env.example` file:
