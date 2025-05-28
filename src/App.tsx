@@ -2,9 +2,10 @@ import { SequenceConnect } from "@0xsequence/connect";
 import { config } from "./config";
 
 import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
-import { NotConnected } from "./views/NotConnected";
-import { Connected } from "./views/Connected";
-import { Select, SequenceBoilerplate } from "boilerplate-design-system";
+import {
+  Select,
+  SequenceBoilerplate,
+} from "@0xsequence-demos/boilerplate-design-system";
 import View3D from "./components/3d/View3D";
 import ItemViewer3D from "./components/3d/ItemViewer3D";
 import DynamicItem from "./components/3d/DynamicItem";
@@ -23,7 +24,6 @@ export default function Layout() {
 }
 
 function App() {
-  const { isConnected } = useAccount();
   const [modelName, setModelName] = useLocalStorage("modelName", "chest.glb");
   return (
     <SequenceBoilerplate
@@ -43,7 +43,6 @@ function App() {
           <DynamicItem gltfUrl={`/${modelName}`} />
         </ItemViewer3D>
       </View3D>
-      {isConnected ? <Connected /> : <NotConnected />}
     </SequenceBoilerplate>
   );
 }
